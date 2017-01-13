@@ -15,7 +15,19 @@ describe Game do
     expect(p.guesses_left).to eq 4
   end
 
-  it 'knows whether or not the guess was correct'
+  it 'stores the users guesses' do
+    g = Game.new
+    p = Player.new
+
+    g.prompt_player_for_input
+    p.makes_a_guess('d')
+    g.prompt_player_for_input
+    p.makes_a_guess('F')
+
+    expect(p.all_guesses).to eq ['d', 'F']gi
+
+
+  end
 
 
 

@@ -13,4 +13,7 @@ class Player
   def guesses_left
     @guesses_left
   end
+  def all_guesses
+    @all_guesses
+  end
 end

@@ -8,12 +8,16 @@ class Game
   def prompt_player_for_input
     puts "Your word is #{@word}"
     puts "Please select a letter"
+    array = Array.new(@word.length)
+    puts " ___ " * @word.length
+    # puts array.to_s
     gets.chomp.to_i
   end
   def accept_player_input(input)
     #this line is probably not necessary
 
     @player.makes_a_guess(input)
+
 
   end
   def number_of_guesses
@@ -26,8 +30,4 @@ class Game
 end
 
 
-word = Word.new.grab_random_word
-array = word.split('')
-puts word
-puts array
 
