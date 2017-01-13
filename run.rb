@@ -9,10 +9,16 @@
 # Display a useful message if a user guesses the same letter twice
 # (and not count off for the second guess)
 require_relative 'word'
+require_relative 'game'
+require_relative 'player'
 
 w = Word.new
+p = Player.new
+g = Game.new
 
+until g.winner || p.is_out_of_guesses
 
-until g.winner || x.is_out_of_guesses
+  puts g.prompt_player_for_input
+
 
 end
