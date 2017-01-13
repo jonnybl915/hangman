@@ -4,6 +4,7 @@ class Player
     @all_guesses = []
   end
   def makes_a_guess(guess)
+    !@all_guesses.downcase.include?(guess.downcase)
     @guesses_left -= 1
     @all_guesses.push(guess)
   end

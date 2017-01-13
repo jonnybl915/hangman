@@ -25,10 +25,18 @@ describe Game do
     p.makes_a_guess('F')
 
     expect(p.all_guesses).to eq ['d', 'F']gi
-
-
   end
 
+  it 'will not let the user guess the same letter twice' do
+    g = Game.new
+    p = Player.new
 
+    g.prompt_player_for_input
+    p.makes_a_guess('d')
+    g.prompt_player_for_input
+    p.makes_a_guess('d')
+
+    expect(p.all_guesses.size).to eq 1
+  end
 
 end
