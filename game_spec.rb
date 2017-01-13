@@ -39,4 +39,7 @@ describe Game do
     expect(p.all_guesses.size).to eq 1
   end
 
+  it 'will show the correct letters when guessed'
+  it 'will show the player their previous guesses'
+  
 end
