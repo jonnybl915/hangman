@@ -62,10 +62,12 @@ class Game
         ('__')
       end
     end
-   puts @board.join(' | ')
+    puts @board.join(' | ')
     @board
 
+
   end
+
   def show_guesses
     puts @all_guesses.join(' ')
   end
