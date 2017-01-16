@@ -1,10 +1,17 @@
 require_relative 'word'
-require_relative 'player'
+
+
+Dictionary = [
+    'jazz',
+    'umphreys',
+    'mcgee'
+]
+
+
 class Game
   def initialize
-    @word = Word.new.grab_random_word
-    @player = Player.new
-    @board = @word
+    # @word = Word.new.grab_random_word
+    @word = Dictionary.sample
     @all_guesses = []
     puts @board
     @guesses_left = 5
@@ -14,21 +21,25 @@ class Game
     puts "Please select a letter"
     puts "you have #{@guesses_left} guesses remaining"
     answer_array = Array.new(@word.length)
-    # puts answer_array
     puts " ___ " * @word.length
-    # puts array.to_s
   end
   def accept_player_input
 
-    input = gets.chomp.to_i
+    input = gets.chomp
     if !@word.include?(input)
       @all_guesses.push(input)
       @guesses_left -= 1
+      puts 'No, Incorrect Answer!'
     else
+      puts 'Hurray, That is Correct!'
     end
   end
   def is_out_of_guesses
     @guesses_left == 0
+
+  end
+  def show_guesses
+    puts @all_guesses.join(',')
   end
   def winner
 

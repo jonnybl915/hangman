@@ -10,9 +10,7 @@
 # (and not count off for the second guess)
 require_relative 'word'
 require_relative 'game'
-require_relative 'player'
 
-w = Word.new
 
 g = Game.new
 
