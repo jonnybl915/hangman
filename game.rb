@@ -4,24 +4,31 @@ class Game
   def initialize
     @word = Word.new.grab_random_word
     @player = Player.new
+    @board = @word
+    @all_guesses = []
+    puts @board
+    @guesses_left = 5
   end
   def prompt_player_for_input
     puts "Your word is #{@word}"
     puts "Please select a letter"
-    array = Array.new(@word.length)
+    puts "you have #{@guesses_left} guesses remaining"
+    answer_array = Array.new(@word.length)
+    # puts answer_array
     puts " ___ " * @word.length
     # puts array.to_s
-    gets.chomp.to_i
   end
-  def accept_player_input(input)
-    #this line is probably not necessary
+  def accept_player_input
 
-    @player.makes_a_guess(input)
-
-
+    input = gets.chomp.to_i
+    if !@word.include?(input)
+      @all_guesses.push(input)
+      @guesses_left -= 1
+    else
+    end
   end
-  def number_of_guesses
-    @all_guesses
+  def is_out_of_guesses
+    @guesses_left == 0
   end
   def winner
 
