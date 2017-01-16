@@ -18,5 +18,11 @@ until g.winner || g.is_out_of_guesses
 
   g.prompt_player_for_input
   g.accept_player_input
+  g.show_board
+  g.show_guesses
 
+end
+
+if g.is_out_of_guesses
+  g.show_answer
 end
